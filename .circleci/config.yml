@@ -17,6 +17,7 @@ jobs:
             # DOTSCIENCE_PASSWORD: [same as above]
             # DOTSCIENCE_EXECUTOR_IMAGE:
             DOTSCIENCE_URL: "https://stage.dotscience.net"
+            DOTSCIENCE_EXECUTOR_IMAGE: quay.io/dotmesh/dotscience-agent:0.5.4
           command: |
             echo $DOTSCIENCE_USERNAME
             echo ${CIRCLE_BRANCH}
