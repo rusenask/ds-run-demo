@@ -67,11 +67,11 @@ Every `ds run` command will need a project name. If you forgot your project name
 ```bash
 $ ds project ls
 ID                                     NAME                DOTS                                   COLLABORATORS       AGE
-ac6d7708-6988-4b49-b922-f3be7bdeaaf7   circleci            8c35ec84-9382-4263-a7e4-2f98885540e6                       3 hours
+ac6d7708-6988-4b49-b922-f3be7bdeaaf7   circleci-demo            8c35ec84-9382-4263-a7e4-2f98885540e6                       3 hours
 ```
 
 ```bash
-ds run --project-name circleci --nvidia --image quay.io/dotmesh/dotscience-tensorflow-opencv:19.02-py3 --repo git@github.com:dotmesh-io/ds-run-demo.git --ref master bash ds-run-demo/get-data.sh
+ds run --project-name circleci-demo --nvidia --image quay.io/dotmesh/dotscience-tensorflow-opencv:19.02-py3 --repo git@github.com:rusenask/ds-run-demo.git --ref master bash ds-run-demo/get-data.sh
 ```
 
 > Note that the actual command can be specified either with `-c` flags or just positional arguments `bash ds-run-demo/get-data.sh`. You will need to specify a repository name as Dotscience clones repository into a subdirectory named after the repository. Any changes to this repository directory will be overwritten during next checkout. 
@@ -81,7 +81,7 @@ ds run --project-name circleci --nvidia --image quay.io/dotmesh/dotscience-tenso
 Now, to test train on `master` branch:
 
 ```bash
-ds run --project-name run-demo --nvidia --image quay.io/dotmesh/dotscience-tensorflow-opencv:19.02-py3 --repo git@github.com:dotmesh-io/ds-run-demo.git --ref master python ds-run-demo/train.py
+ds run --project-name circleci-demo --nvidia --image quay.io/dotmesh/dotscience-tensorflow-opencv:19.02-py3 --repo git@github.com:rusenask/ds-run-demo.git --ref master python ds-run-demo/train.py
 ```
 
 You can replace flag `--ref` value with a commit ID, other branch name or tag name to train on that specific point in time.
@@ -91,7 +91,7 @@ You can replace flag `--ref` value with a commit ID, other branch name or tag na
 To see model performance, use `ds runs ls [PROJECT NAME OR ID]` command:
 
 ```bash
-ds runs ls run-demo
+ds runs ls circleci-demo
 LABELS                                                                                     PARAMETERS                  TYPE                SCORE               AGE
 model.framework=tensorflow, model.framework.version=1.13.0-rc0, model.directory=model      epochs=1, optimizer=adam    accuracy            0.9030879           24 hours
 model.framework=tensorflow, model.framework.version=1.13.0-rc0, model.directory=../model   epochs=10, optimizer=adam   accuracy            0.9332542           24 hours
