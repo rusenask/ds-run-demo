@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: quay.io/dotmesh/ds:latest
+      - image: quay.io/dotmesh/ds:dev
 
     working_directory: ~/repo
 
