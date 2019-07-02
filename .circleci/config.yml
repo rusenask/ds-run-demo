@@ -15,9 +15,8 @@ jobs:
           environment:
             # DOTSCIENCE_USERNAME: [configured via dashboard https://circleci.com/docs/2.0/env-vars/]
             # DOTSCIENCE_PASSWORD: [same as above]
-            # DOTSCIENCE_EXECUTOR_IMAGE:
             DOTSCIENCE_URL: "https://stage.dotscience.net"
-            DOTSCIENCE_EXECUTOR_IMAGE: quay.io/dotmesh/dotscience-agent:0.5.0
+            # DOTSCIENCE_EXECUTOR_IMAGE: quay.io/dotmesh/dotscience-agent:0.5.0
           command: |
             echo $DOTSCIENCE_USERNAME
             echo ${CIRCLE_BRANCH}
